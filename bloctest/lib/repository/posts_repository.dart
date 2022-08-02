@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 import 'model/post.dart';
@@ -6,14 +7,17 @@ import 'model/post.dart';
 Map<String, String> header = {'Content-Type': 'application/json; charset=utf8'};
 final url = Uri.parse('https://jsonplaceholder.typicode.com/posts');
 
-class PostsRepository {
+class PostRepository {
   // EndPoints, DB
-  PostsRepository();
+  const PostRepository();
 
   Future<List<Post>> getPostList() async {
     final response = await http.get(url, headers: header);
+
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
+
+      log('result : (${result[0]}');
       final posts =
           (result as List<dynamic>).map((e) => Post.fromJson(e)).toList();
       return posts;
