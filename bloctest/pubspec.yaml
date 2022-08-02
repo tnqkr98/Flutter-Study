@@ -1,0 +1,35 @@
+name: bloctest
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  json_annotation: '>=4.6.0 <4.7.0'
+  flutter_bloc:
+  bloc:
+  equatable: ^2.0.3
+  freezed_annotation: ^2.1.0
+  retrofit:
+  http:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  build_runner: ^2.0.0
+  freezed: ^2.1.0+1
+  json_serializable:
+
+flutter:
+
+  uses-material-design: true
